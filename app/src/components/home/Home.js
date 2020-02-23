@@ -11,6 +11,7 @@ import {Strings} from '../../../utils/values/Strings';
 import SearchBar from './SearchBar';
 import BusyError from '../commons/errors/BusyError';
 import Empty from './Empty';
+import { AppConfig } from '../../../config/AppConfig';
 
 class Home extends Component {
   constructor(props) {
@@ -174,6 +175,7 @@ class Home extends Component {
           />
           {this.props.homeReducer.youtubeResults != null && (
             <YouTube
+              apiKey={AppConfig.googleApiKey}
               videoId={this.props.homeReducer.youtubeResults} // The YouTube video ID
               play // control playback of video with true/false
               //fullscreen // control whether the video should play in fullscreen or inline
